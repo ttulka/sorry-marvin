@@ -25,12 +25,12 @@ A program starts with the first register as the current default.
 
 ## Instructions
 
-Sorry, Marvin! features two compound instructions, MVINC and DECJZDEC, *move and increment* and *jump if zero, decrement twice otherwise*, which could simulate any Minsky machine:
+Sorry, Marvin! features two compound instructions, MVINC and DECJZDEC, *move and increment* and *decrement; jump if zero, decrement otherwise*:
 
 | Instruction | Code       | Meaning | 
 | ----------- | ---------- | ------- |
 | MVINC       | `!`        | Move to the next register and increment its value |
-| DECJZDEC    | `>`×*n*  | Decrement; if n > 1 then if the current register is zero, jump *n* instructions forward, decrement otherwise |
+| DECJZDEC    | `>`×*n*  | Decrement; if *n* > 1 then if the current register is zero, jump *n* instructions forward, decrement otherwise |
 
 A program in Sorry, Marvin! is a cyclic, ordered list of instructions. When *n* of DECJZDEC exceeds the program length, the program counter wraps around to the beginning and jumps forward by the remainder of the division by *n*. Using this feature, backward jumps can be simulated via DECJZDEC.
 
@@ -164,7 +164,7 @@ Simulating INC and JZDEC using MVINC and DECJZDEC is relatively straightforward.
 
 To increment a register *n* (where *n*=0..3), we first need to move to the preceding register. This can be accomplished by using the nondestructive subroutine `!>` repeated (4+*n*-1-*c*)%4 times, where *c* is the current register index:
 
-Example: Increment the third register (n=2):
+Example: Increment the third register (*n*=2):
 
 ```
 !>!>!
