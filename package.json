@@ -1,0 +1,28 @@
+{
+  "name": "sorry-marvin",
+  "version": "1.0.0-0",
+  "description": "Sorry, Marvin! is an esoteric programming language that went wrong.",
+  "main": "sorry-marvin.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttulka/sorry-marvin.git"
+  },
+  "keywords": [
+    "sorry-marvin",
+    "esolang",
+    "programming-language",
+    "js"
+  ],
+  "author": "Tomas Tulka (ttulka)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ttulka/sorry-marvin/issues"
+  },
+  "homepage": "https://github.com/ttulka/sorry-marvin#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
