@@ -30,6 +30,7 @@ test('decrement', () => {
   expect(sorry('>', [1, 0, 0, 0])).toStrictEqual([0, 0, 0, 0])
   expect(sorry('!>!>!>!>>', [2, 0, 0, 0])).toStrictEqual([1, 0, 0, 0])
   expect(sorry('>!>!>!>!>>', [2, 0, 0, 0])).toStrictEqual([0, 0, 0, 0])
+  expect(sorry('>!>!>!>!>>', [42, 0, 0, 0])).toStrictEqual([40, 0, 0, 0])
   expect(sorry('!>!>>', [1, 2, 3, 4])).toStrictEqual([1, 2, 2, 4])
 })
 

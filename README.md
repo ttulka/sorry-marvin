@@ -30,7 +30,7 @@ Sorry, Marvin! features two compound instructions, MVINC and DECJZDEC, *move and
 | Instruction | Code       | Meaning | 
 | ----------- | ---------- | ------- |
 | MVINC       | `!`        | Move to the next register and increment its value |
-| DECJZDEC    | `>` × *n*  | Decrement; if n > 1 then if the current register is zero, jump *n* instructions forward, decrement otherwise |
+| DECJZDEC    | `>`×*n*  | Decrement; if n > 1 then if the current register is zero, jump *n* instructions forward, decrement otherwise |
 
 A program in Sorry, Marvin! is a cyclic, ordered list of instructions. When *n* of DECJZDEC exceeds the program length, the program counter wraps around to the beginning and jumps forward by the remainder of the division by *n*. Using this feature, backward jumps can be simulated via DECJZDEC.
 
@@ -189,8 +189,8 @@ npm i sorry-marvin
 ```js
 const sorry = require('sorry-marvin')
 
-// [0, 55, 1]
-sorry(`TBD`, [42, 13, 0])
+// [40, 0, 0, 0]
+sorry(`>!>!>!>!>>`, [42, 0, 0, 0])
 ```
 
 ## License
